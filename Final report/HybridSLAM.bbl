@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{dissanayake2001solution}
+MWMG Dissanayake, Paul Newman, Steven Clark, Hugh~F Durrant-Whyte, and Michael
+  Csorba.
+\newblock A solution to the simultaneous localization and map building (slam)
+  problem.
+\newblock {\em Robotics and Automation, IEEE Transactions on}, 17(3):229--241,
+  2001.
+
+\bibitem{brooks2009hybridslam}
+Alex Brooks and Tim Bailey.
+\newblock Hybridslam: Combining fastslam and ekf-slam for reliable mapping.
+\newblock In {\em Algorithmic Foundation of Robotics VIII}, pages 647--661.
+  Springer, 2009.
+
+\bibitem{tardos2002robust}
+Juan~D Tard{\'o}s, Jos{\'e} Neira, Paul~M Newman, and John~J Leonard.
+\newblock Robust mapping and localization in indoor environments using sonar
+  data.
+\newblock {\em The International Journal of Robotics Research}, 21(4):311--330,
+  2002.
+
+\bibitem{guivant2001optimization}
+Jose~E Guivant and Eduardo~Mario Nebot.
+\newblock Optimization of the simultaneous localization and map-building
+  algorithm for real-time implementation.
+\newblock {\em Robotics and Automation, IEEE Transactions on}, 17(3):242--257,
+  2001.
+
+\bibitem{smith1990estimating}
+Randall Smith, Matthew Self, and Peter Cheeseman.
+\newblock Estimating uncertain spatial relationships in robotics.
+\newblock In {\em Autonomous robot vehicles}, pages 167--193. Springer, 1990.
+
+\end{thebibliography}

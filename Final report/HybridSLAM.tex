@@ -1,0 +1,822 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+\usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at:
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+\usepackage{caption}
+\usepackage{subcaption}
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+\usepackage{xcolor}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{HybridSLAM}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Macheng Shen}
+\IEEEauthorblockA{Department of Naval Architecture\\ and Marine Engineering\\
+University of Michigan\\
+Ann Arbor, Michigan 48109\\
+Email: macshen@umich.edu}
+\and
+\IEEEauthorblockN{Shengjia Wu}
+\IEEEauthorblockA{Department of Mechanical\\Engineering\\
+University of Michigan\\
+Ann Arbor, Michigan 48109\\
+Email: shengjwu@umich.edu}
+\and
+\IEEEauthorblockN{Yukai Gong}
+\IEEEauthorblockA{Department of Mechanical\\Engineering\\
+University of Michigan\\
+Ann Arbor, Michigan 48109\\
+Email: ykgong@umich.edu}
+\and
+\IEEEauthorblockN{Fan Bu}
+\IEEEauthorblockA{Department of Mechanical\\Engineering\\
+University of Michigan\\
+Ann Arbor, Michigan 48109\\
+Email: fanbu@umich.edu}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+In this paper, the implementation of Hybrid-SLAM (Simultaneous Localization and Mapping) is presented and investigated. Hybrid-SLAM combines the advantage of both EKF and FAST-SLAM to preserve global consistency, reduce the complexity as well as make data association more robust. It has been shown by simulation that linearization and resampling in general leads to over-confidence, which makes loop closure and data association problematic.  Combining the particle representation to a Gaussian distribution and incorporating the information into an EKF back-end allows the cross correlation to be remembered over long trajectory as well as minimizing linearization error. By using a sub map approach, the complexity is also reduced compared with pure EKF-SLAM and the number of particles can be reduced compared with FAST-SLAM. In addition, data association becomes more robust as the number of matched features increases significantly.
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+Simultaneous Localization and Mapping (SLAM) has been a popular topic in robotics research for a long time. Several feature-based methods have been proposed to solve this problem, such as EKF, SEIF, ESEIF, which base on the Kalman Filter approach; FAST-SLAM, which bases on the exact Rao-Blackwellized Particle Filter approach and Pose-Graph SLAM, which formulates the SLAM problem as a nonlinear optimization but can only be used offline.
+
+For online SLAM algorithms, complexity and robustness are two crucial aspects to be considered. Algorithms of high complexity may impose strict restriction on the maximum number of features to be located as well as the requirement of expensive computational amount and memory, while those of low robustness may result in inconsistent estimation or divergence, which leads to catastrophic consequences such as collision.
+
+EKF-SLAM is regarded as the golden standard for the solution of SLAM problem as it preserves consistency over long trajectory by remembering the correlation between robot and landmarks. Besides, convergence property has been proved that the estimation of the uncertainty decreases monotonically and converges to a lower bound as the number of observations increases. \cite{dissanayake2001solution}
+
+However, the cubic complexity of updating the covariance matrix using observation prevents the online application of EKF-SLAM to environment of more than thousands of landmarks. This computational limitation can be overcome in two ways. One is by the development of algorithms of much lower complexity such as SEIF, ESEIF and FAST-SLAM, while all these `pure' SLAM methods have some drawbacks with respect to consistency, linearization error and loop closing. The other way is by sub-map approaches, which creates local maps and fuses them recursively to generate a consistent global map. The latter approach allows the application of two different algorithms for the local and global maps respectively.
+In this paper, a hybrid sub-map based approach for the SLAM problem is presented. The key idea is to use FAST-SLAM as a front-end to generate local maps and fuses them to the EKF-SLAM back-ended global map. \cite{brooks2009hybridslam}
+
+
+\begin{figure}
+       \centering
+       \includegraphics[width=0.5\textwidth]{hybrid_illustrate.png}
+       \caption{Illustration of the Hybrid-SLAM based on sub map approach}
+       \label{hybrid illustrate}
+\end{figure}
+
+Fig.~\ref{hybrid illustrate} illustrates the idea behind Hybrid-SLAM. A local map is created with its local coordinate frame initialized by the robot pose. After several steps of FAST-SLAM on the local map, the particle representation of the state estimation is transformed to a Gaussian distribution and transformed back to the global coordinate frame. Then the corresponding features are associated with the ones in the global map and updated, and a new local map is created.
+
+The subsequent sections are arranged as follow: In Section~\ref{our works}, previous works are reviewed and the key contribution of this paper is summarized. In Section~\ref{Technical part}, technical details of the implementation are presented. Focus has been put on the transformation of particle representation to a single Gaussian distribution, covariance propagation, map fusion and data association. In Section~\ref{Simulation results and discussion}, simulation results on the simulator and the Victoria Park data set are presented. The performance of the hybrid method concerning complexity and consistency compared with EKF-SLAM and FAST-SLAM is investigated. In Section~\ref{Conclusion}, conclusions are drawn.
+
+\section{}\label{our works}
+\subsection{Review of Related Previous works}
+The theoretical background of sub-map building, matching and fusion with the global map was presented in Tard's et.al.\cite{tardos2002robust}, which serves as a foundation of this work. A compressed filter approach was implemented by Guivant et.al. \cite{guivant2001optimization}, which essentially applied the sub-map approach on a EKF front and back-end algorithm for efficient SLAM. This significantly reduced the complexity, while it was subject to linearization error and prone to wrong data association due to the EKF front-end. The idea of Hybrid SLAM using FAST-SLAM front-end and EKF-SLAM back-end was proposed by Brooks and Bailey \cite{brooks2009hybridslam}, which acclaimed a superior performance over both EKF and FAST-SLAM. Nevertheless, the technical details were not presented with sufficient details.
+
+
+\subsection{Key contributions of this work}
+The work presented in this paper formulates the missing technical details as well as addresses important corner cases and adopt an adaptive scheme to determine the fusion time. The advantages of Hybrid SLAM can be summarized as follow:
+
+(1) Linearization errors are eliminated by the FAST-SLAM front-end.
+
+(2) Correlation and consistency are preserved by the EKF-SLAM back-end.
+
+(3) Complexity is drastically reduced due to the much fewer number of Kalman update and much fewer number of particles required because of the limited size of the local map.
+
+(4) Robustness for data association and loop closure is significantly increased due to the increased number of matched features between local and global maps.
+\section{Technical part}\label{Technical part}
+\subsection{The whole picture of the technical solution}
+FastSLAM2.0 is used to get the Gaussian Mixture Model. The Gaussian Mixture Model is then converted to a Single Gaussian. Finally using this Single Gaussian Distribution to do the EkfSLAM update and thus finish a cycle of the HybridSLAM.
+\subsection{Gaussian Mixture Model from FastSLAM2.0}
+The FastSLAM algorithm factors distribution is:
+\begin{align*}
+p(x_{1:t},&M|z_{1:t},u_{1:t},x_{t})\\
+&=p(x_{1:t}|z_{1:t},u_{1:t},x_{t})\prod_{n}p(m_{n}|x_{1:t},z_{1:t},u_{1:t})
+\end{align*}
+
+This factored distribution is represented as a set of P samples, which can be represented as:
+$$S_{t}^{p}=\left \{ w_{t}^{p},y_{t}^{p},P_{t}^{p} \right \}$$
+
+$w_{t}^{p}$ is the weight of the $p^{th}$ particles, and $y_{t}^{p}$, $P_{t}^{p}$ are the mean and covariance for the robot state and all landmarks.
+$$y_{t}^{p}=\left [ x_{t}^{p},\mu_{1,t}^{p},...,\mu_{N,t}^{p} \right ]$$
+\subsection{Single Gaussian from Gaussian Mixture Model}
+The parameters of a Single Gaussian, the mean xt and covariance Pt, can be computed from Gaussian Mixture Model by using formula~\eqref{Moment Matching y} and~\eqref{Moment Matching p} known as Moment Matching:
+\begin{align}\label{Moment Matching y}
+y_{t}&=\sum_{p}^{ }w_{t}^{p}y_{t}^{p}\\
+P_{t}&=\sum_{p}^{ }w_{t}\left [ P_{t}^{p}+(x_{t}^{p}-x_{t})(x_{t}^{p}-x_{t})_{ }^{T}\right ]\label{Moment Matching p}
+\end{align}
+In Equation~\eqref{Moment Matching p}, the first term in the square brackets is the covariance of the particle¡¯s individual map. The second term is from the variation between particle¡¯s maps.
+
+\subsection{Setting Correspondences from Voting Mechanism}
+It is necessary to set correspondences for each observation. For a single observation, each particle can make following vote decision:
+
+(1) Correspond the observation to an existing map feature.
+
+(2) Ignore the observation(see the observation as spurious).
+
+(3) Correspond the observation with a new map feature.
+
+Each particle votes in proportion to its weight. The voting mechanism considers the number of particles and their weights to determine the winner and set it as the correspondence for this single observation. In the end, this voting mechanism forms a consensus about the common set of features.
+
+\subsection{Forming a Gaussian Given Correspondences}
+Using the correspondences to map the features in each particle¡¯s individual map to the common set of features. The function $\delta$ is used as the reverse mapping:$\delta _{t}(n,p)=i$, which indicates that the $n^{th}$ feature in the common set is represented by the $i^{th}$ feature in the $p^{th}$ particles map. Thus each particle can be represented by its weight, mean and covariance. The mean and covariance matrix can be simply written as:
+\begin{align*}
+y_{t}^{p}&=[x_{t}^{p},\mu _{\delta _{t}(1,p),t}^{p},...\mu _{\delta _{t}(N,p),t}^{p}]\\
+P_{t}^{p}&=\begin{bmatrix}
+P_{xx,t}^{p} &  &  & \\
+ & \Sigma _{\delta _{t(1,p),t}}^{p} &  & \\
+ &  &...  & \\
+ &  &  &\Sigma _{\delta _{t(N,p),t}}^{p}
+\end{bmatrix}
+\end{align*}
+
+Thus each particle's individual map can be represented by a single multidimensional mean and covariance.
+
+The difficulties are the two cases. Firstly, a particle¡¯s individual map may contain multiple features correspond to the same feature in the common set. Secondly, a feature in the common set may have no corresponding features in a particle¡¯s individual map. For case one, the algorithm simply pick one feature as random to compute the mean and covariance for the corresponding common feature. For case two, the algorithm ignores those particles when computing the mean and covariance of that common feature.
+
+\subsection{Map Fusion}
+During the HybridSLAM process, the filter consists of two maps, the Gaussian global map and the Gaussian local map. By fusing the local map to the global map periodically, the required number of particles can be reduced compared with pure FAST-SLAM. The filter takes two steps to do the Map Fusion:
+
+(1) Initialize the local features in the global map.
+
+(2) Features are associated and fused.
+
+The initialization step requires initialization of both the local features and the robot pose because the robot pose in the local map is obviously different from that in the global map during local map initialization. The mean and covariance are computing as follows:
+\begin{gather*}
+y^{+}=\begin{bmatrix}
+y^{-}\\
+g(x^{-},x_{L})
+\end{bmatrix}\\
+P^{+}=\begin{bmatrix}
+P_{xx}^{-} & P_{xm}^{-} & {P_{xx}^{-}}^{T}\bigtriangledown _{xg}^{T} \\
+P_{xm}^{-} & P_{mm}^{-} & {P_{xm}^{-}}^{T}\bigtriangledown _{xg}^{T}\\
+\bigtriangledown _{xg}P_{xx}^{-} & \bigtriangledown _{xg}P_{xm}^{-} & \bigtriangledown _{xg}P_{xx}^{-}\bigtriangledown _{xg}^{T}+\bigtriangledown _{zg}P_{L}^{-}\bigtriangledown _{zg}^{T}
+\end{bmatrix}
+\end{gather*}
+
+Where $x^-,x^+,P^-,P^+$ represents the mean and covariance of the global map before and after fusion, $x_L$ and $P_L$ represents the mean and covariance of the local map, and $g(x^{-},x_{L})$ transform the local map into the global coordinates by using the Head-to-Tail \cite{smith1990estimating} and $x^-$: the robot¡¯s global pose at the time of the previous fusion.
+
+The association step:
+
+The condition that features $E_i$ from the local map and $F_{ji}$ from the global map coincide can be expressed using an ideal measurement equation which does not consider noise. This is taken as the difference of the coordinates in the global map.
+$$z_{i}=h_{ij_{i}}(x)=0$$
+
+The measurement equation can be expanded around the mean, which is actually precise here because the measurement function is linear.
+$$h_{ij_{i}}(x)\simeq h_{ij_{i}}(\hat{x})+H_{ij_{i}}(x-\hat{x})$$
+
+with
+$$H_{ij_{i}}=\left.\begin{matrix}
+\frac{{\partial}h_{ij_{i}}}{{\partial}x}
+\end{matrix}\right|_{\hat{x}}=\begin{bmatrix}
+0 & ... & H_{Fj_{i}} & ... & H_{Ej_{i}} & ... & 0
+\end{bmatrix}
+$$
+\begin{align*}
+H_{Fj_{i}}&=\left.\begin{matrix}
+\frac{{\partial}h_{ij_{i}}}{{\partial}x_{Fj_{i}}}
+\end{matrix}\right|_{\hat{x}}
+\\
+H_{Ej_{i}}&=\left.\begin{matrix}
+\frac{{\partial}h_{ij_{i}}}{{\partial}x_{Ej_{i}}}
+\end{matrix}\right|_{\hat{x}}
+\end{align*}
+
+$H$ represents the innovation of the pairing and $H$ is the associated Jacobian
+\begin{gather*}
+h_{\mathcal{H}}(x)=\begin{bmatrix}
+h_{ij_{i}}(x)\\...
+\\ h_{mj_{m}}(x)
+\end{bmatrix}\simeq h_{\mathcal{H}}(\hat{x})+H_{\mathcal{H}}(x-\hat{x})
+\\
+H_{\mathcal{H}}={\partial}h_{\mathcal{H}}/{\partial}x|_{\hat{(x)}}=\begin{bmatrix}
+H_{1j_{1}}\\ ...
+\\ h_{mj_{m}}
+\end{bmatrix}
+\end{gather*}
+
+The validity of the hypothesis $\mathcal{H}$ can be determined using an innovation test on the joint innovation $h_{\mathcal{H}}(\hat{x})$ as follows:
+$$D_{\mathcal{H}}^{2}=h_{\mathcal{H}}(\hat{x})^{T}(H_{\mathcal{H}}PH_{\mathcal{H}})^{-1}h_{\mathcal{H}}(\hat{x})< \chi _{d,\alpha }^{2}$$
+
+Once this hypothesis has been determined, a new estimate $\hat{x}_0$ of the state vector and its covariance $P_0$ can be obtained by applying the modified EKF update equations:
+\begin{align*}
+\hat{x}'&=\hat{x}-Kh_{\mathcal{H}}(\hat{x})\\
+{P}'&=(I-KH_{\mathcal{H}})P\\
+K&=PH_{\mathcal{H}}^{T}(H_{\mathcal{H}}PH_{\mathcal{H}}^{T})^{-1}
+\end{align*}
+
+After the modified EKF update, the associated features become fully correlated with the same mean and covariance, and one of the duplicate can be eliminated.
+\subsection{Adaptive Step Number}
+
+Another difficulty to get a good SLAM result is to determine when to conduct map fusion. Map fusion right after a sharp turn can be susceptible to linearization error of covariance propagation, resulting in wrong data association. adaptive number of step for local SLAM is applied to avoid fusion under large uncertainty, delaying the fusion process until sufficient number of pairings appears for robust JCBB.
+
+\section{Simulation results and discussion}\label{Simulation results and discussion}
+\subsection{Consistency}
+One of the important criterions for robust SLAM algorithms is the capability of preserving consistency. Loss of consistency can result in failure of data association, loop closure and even more severe consequences such as collision if the results of SLAM are to be used for planning.
+\begin{figure}
+        \centering
+        \begin{subfigure}[a!]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{resulting_map_EKFSLAM.jpg}
+                \subcaption{generated by EKF-SLAM}
+                \label{resulting map EKFSLAM}
+        \end{subfigure}
+        \begin{subfigure}[b!]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{resulting_map_FASTSLAM.jpg}
+                \subcaption{generated by FAST-SLAM (50 particles)}
+                \label{resulting map FASTSLAM}
+        \end{subfigure}
+        \begin{subfigure}[c!]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{resulting_map_HybridSLAM.jpg}
+                \subcaption{generated by Hybrid-SLAM (50 particles, fusion every 10 steps)}
+                \label{resulting map HybridSLAM}
+        \end{subfigure}
+\caption{Consistency of the resulting map}\label{Consistency of the resulting map}
+\end{figure}
+
+Fig.~\ref{Consistency of the resulting map} shows the SLAM results by EKF, FAST and Hybrid-SLAM after 200 time steps. All of the three results have reached a steady state, i.e., the mean and covariance of the landmarks does not significantly change with time any more. The three sigma ellipsoids generated by EKF and Hybrid-SLAM are larger than those generated by FAST-SLAM, which indicates that the effect of particle degeneracy in general leads to over-confidence. This problem can be well handled by Hybrid-SLAM because the local map generated by FAST-SLAM front-end is transformed into a Gaussian representation and fused to the global map every several time steps before the particles degenerate severely. The cross correlation between the robot and landmarks are preserved by taking the variance of the estimation of landmarks by each particles into consideration.
+\begin{figure}
+       \centering
+       \includegraphics[width=0.5\textwidth]{hybridslam_finalmap.jpeg}
+       \caption{Hybrid-SLAM solution to the Victoria Park data set}
+       \label{Hybrid-SLAM solution to the Victoria Park data set}
+\end{figure}
+
+Fig.~\ref{Hybrid-SLAM solution to the Victoria Park data set} shows the SLAM solution by Hybrid-SLAM on the Victoria Park data set. It is very similar to that by EKF-SLAM, indicating nice consistency preserving property of the hybrid algorithm.
+\begin{figure}
+       \centering
+       \includegraphics[width=0.5\textwidth]{Evolution_of_determinant.jpg}
+       \caption{Evolution of determinant of the covariance matrix using EKF-SLAM, FAST-SLAM and Hybrid-SLAM}
+       \label{Evolution of determinant}
+\end{figure}
+
+To further investigate the consistency property, time evolution of the determinants of the covariance matrix as a measurement of the uncertainty are compared as shown in Fig.~\ref{Evolution of determinant}. The sub-map is fused to the global map every 10 time steps for Hybrid-SLAM, so the determinant is shown only for these discrete time steps. The determinant of FAST-SLAM is calculated by first transforming the particle representation to a single Gaussian distribution as described in the technical part, taking into consideration the cross covariance between particles. As shown in the figure, initially FAST-SLAM can preserve consistency because particles diversity is sufficient, while after the second peak, the determinant decrease rapidly before loop closure. Finally, the determinant of FAST-SLAM is several orders smaller than those of EKF-SLAM and Hybrid-SLAM. Although Hybrid-SLAM inherits some degeneracy because of its FAST-SLAM front-end, the effect can be reduced by either increasing the particle number or reduce the local map time steps.
+
+Moreover, Hybrid-SLAM also inherits the advantage of FAST-SLAM that no linearization is made in the prediction step. Therefore, Hybrid-SLAM outperforms EKF-SLAM where nonlinearity is significant such as a sharp turn. Also noted that the aspect ratios of the ellipsoids generated by Hybrid-SLAM are smaller than those generated by EKF-SLAM. This is because that the front-end makes no linearization to initialize the landmarks using observation, which results in a banana shaped estimation for landmarks uncertainty. While linearization error is also a source of over-confidence, the effect is much less significant than that of diversity loss. Nonetheless, large linearization error can result in large uncertainty of the current state estimation and make it prone to wrong data association.
+\subsection{Data Association}
+Bad data association decisions can be made with high possibility when the uncertainty caused by linearization error becomes large. Wrong data association can make the state estimation deviate from the ground truth and even cause filter divergence when it happens during loop closure. This problem cannot be solved by JCBB if a spurious observation occurs without the true feature being observed. Fig.\ref{Illustration of the effect of the linearization error on data association} illustrates the typical scenario where a sharp turn results in large transient uncertainty of the robot pose and consequently wrong data association caused by inaccurate sensing.
+\begin{figure}
+        \centering
+        \begin{subfigure}[a!]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{pose_uncertainty.png}
+                \subcaption{Evolution of robot pose uncertainty}
+                \label{Evolution of robot pose uncertainty}
+        \end{subfigure}
+        \begin{subfigure}[b!]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{spurious_observation.png}
+                \subcaption{wrong data association caused by spurious observation}
+                \label{wrong data association caused by spurious observation}
+        \end{subfigure}
+\caption{Illustration of the effect of the linearization error on data association}\label{Illustration of the effect of the linearization error on data association}
+\end{figure}
+
+Possible remedies can be rejecting observation if it is hard to make the data association decision or delaying the association decision and using the current observation to update future state. In either case, the state estimation process is delayed which is undesirable. Besides, it is not straightforward to update the current state using a previous observation in either EKF or FAST-SLAM frames, which forces the filter to make hard data association decisions. This problem can be solved by Hybrid-SLAM by adopting an adaptive scheme to determine the time for map fusion. When the data association becomes hard due to large uncertainty, the map fusion process is delayed and the observations are used to update the local map without any loss of information. Wrong data association in the local map can be overturned by the voting mechanism and particles that make bad data association have a large possibility of being eliminated by resampling. Map fusion is made when the uncertainty of the local robot pose and landmarks decreases below a certain level. As the size of the local map increases, the number of matched pairings between the local and global maps also increases. This also boosts the robustness of JCBB as the possibility of incorporating spurious observation becomes exponentially small with the increasing number of matched pairings.
+\subsection{Complexity}
+\begin{figure}
+       \centering
+       \includegraphics[width=0.5\textwidth]{Complexity_HybridSLAM.jpg}
+       \caption{Complexity of Hybrid-SLAM}
+       \label{Complexity of Hybrid-SLAM}
+\end{figure}
+
+Fig.~\ref{Complexity of Hybrid-SLAM} shows the computational time of Hybrid-SLAM on the Victoria Park data set. The spikes appearing every 10 time steps are caused by the map fusion, which includes the transformation from particle representation, data association and the modified EKF update. The height of the spikes increases over time as the associated complexity increases with the number of landmarks in the global map. However, except for the map fusion, the average complexity does not increase with time as shown in the figure. This is because the size of the local map is limited which mostly depends on the time steps between which two successive map fusion process takes place. A small number of time steps between successive map fusion allows a choice of fewer number of particles in the local map since the size of the local map will be small and degeneracy will not be a problem; while a large number of time steps between successive map fusion can significantly save the computational complexity of the map fusion since the total number of map fusion process is reduced by a factor of the number of local map time steps.
+\begin{figure}
+        \centering
+        \begin{subfigure}[a!]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{fastslam_finalmap_step500_Np100_R20.jpeg}
+                \subcaption{Final map}
+                \label{fastslam finalmap}
+        \end{subfigure}
+        \begin{subfigure}[b!]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{fastslam_time_step500_Np100_Q10_p0_1point5.jpeg}
+                \subcaption{Complexity of Fast-SLAM}
+                \label{fastslam time}
+        \end{subfigure}
+\caption{Fast-SLAM solution to the Victoria Park data set}\label{FAST-SLAM solution to the Victoria Park data set}
+\end{figure}
+
+The simulation results on the Victoria Park data set and the complexity using FAST-SLAM is also shown in Fig.~\ref{FAST-SLAM solution to the Victoria Park data set} for comparison. It should be noted that although both FAST-SLAM and Hybrid-SLAM seems to be very inefficient as shown by the needed CPU time, it is actually caused by the graphics and inevitable iteration loops used in the Matlab. If the codes were written in other language, e.g., Java, it would be much more efficient. Besides, the observation noise used for data association and update by the filter has been artificially amplified so that the particle filter can correctly associate observation to the known landmarks instead of creating excessive number of new landmarks.
+
+
+
+
+
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Conclusion}\label{Conclusion}
+In this paper, the performance of Hybrid-SLAM is evaluated. It has been shown that Hybrid-SLAM outperforms both EKF-SLAM and FAST-SLAM in both loop closure and data association. The reason for that is analyzed in details and the following conclusions can be made:
+
+(1) Linearization and resampling in general leads to over-confidence. By combining the particle representation to a Gaussian distribution, the cross correlation between robust and landmarks is allowed to be remembered, which makes it easier to close a large loop.
+
+(2)	Sub map approach allows the required number of particles in the local map to be reduced and makes JCBB data association more robust as the number of matched features increases.
+
+(3)	Hybrid-SLAM also inherits to some extent over-confidence from its FAST-SLAM front-end, while the severity is much less than that of FAST-SLAM, which is expected to be addressed by either increasing the number of particles or reducing the steps on the local map before fusion.
+
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgment
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%
+\renewcommand\refname{Reference}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+% that's all folks
+\end{document}
+
+
