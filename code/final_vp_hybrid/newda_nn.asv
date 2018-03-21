@@ -1,0 +1,49 @@
+function [chat,new,pf,zt_zhat]=newda_nn(z,pf,Rt)
+% perform nearest-neighbor data association
+global Param;
+if pf.Mn==0
+    
+
+
+
+else
+    for j=1:pf.Mn
+        [zhat Hx Hm]=h_and_Jacob(pf.lm(:,j),pf.pose);
+        P=Hm*pf.cov(:,2*j-1:2*j)*Hm'+Hx*Rt*Hx'+Param.R;
+        zt_zhat(:,j)=[z(1)-zhat(1);minimizedAngle(z(2)-zhat(2))];
+        D(j)=zt_zhat(:,j)'*P^-1*zt_zhat(:,j);
+    end
+
+    
+    
+    [dmin chat]=min(D);% Li may be modified later
+    
+    d=chi2inv(0.9999,1); % 0.99 belief in chi square
+
+    if dmin > d
+        chat=pf.Mn+1;
+%         pf.Mn=pf.Mn+1;
+        new=1;
+    else
+        new=0;
+    end
+end
+end
+
+
+
+function [zbar Hx Hm]=h_and_Jacob(mu,xhat)    %called by get_Pi
+dx=mu(1)-xhat(1);
+dy=mu(2)-xhat(2);
+q=dx^2+dy^2;
+zbar=[sqrt(q);
+    atan2(dy,dx)-xhat(3)]; %prediction of observation of bearing
+zbar(2)=minimizedAngle(zbar(2));
+
+Hx=1/q*[-sqrt(q)*dx,-sqrt(q)*dy,0;
+    dy,         -dx,      -q];
+
+Hm=1/q*[sqrt(q)*dx,sqrt(q)*dy;
+    -dy,      dx];
+end 
+
